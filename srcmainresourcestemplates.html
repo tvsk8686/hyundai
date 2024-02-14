@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hyundai Dallas - Home</title>
+</head>
+<body>
+<h1>Hyundai Dallas</h1>
+<ul>
+    <li th:each="vehicle : ${vehicles}">
+        <a th:href="@{'/vehicle/' + ${vehicle.id}}">
+            <img th:src="${vehicle.imageUrl}" alt="${vehicle.name}" width="100">
+            <span th:text="${vehicle.name}"></span>
+        </a>
+    </li>
+</ul>
+</body>
+</html>
